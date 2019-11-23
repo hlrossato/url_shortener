@@ -42,9 +42,13 @@ DEFAULT_APPS = [
     "django.contrib.staticfiles",
 ]
 
-PROJECT_APPS = []
+PROJECT_APPS = [
+    "shorturls.apps.ShorturlsConfig",
+]
 
-THIRD_PARTY_APPS = []
+THIRD_PARTY_APPS = [
+    "django_extensions",
+]
 
 INSTALLED_APPS = DEFAULT_APPS + PROJECT_APPS + THIRD_PARTY_APPS
 
