@@ -1,0 +1,27 @@
+version: '3.7'
+
+services:
+  db:
+    container_name: shortener_db
+    image: postgres:latest
+    ports:
+      - "5432"
+    restart: on-failure
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+  app:
+    build:
+      context: .
+      dockerfile: .docker/Dockerfile
+    container_name: shortener_web
+    command: python shortener/manage.py runserver 0.0.0.0:8000
+    depends_on:
+      - db
+    ports:
+      - "8000:8000"
+    restart: on-failure
+    volumes:
+      - .:/shortener
+
+volumes:
+  postgres_data:
