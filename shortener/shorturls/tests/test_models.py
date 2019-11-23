@@ -1,12 +1,9 @@
 from django.test import TestCase
 from shorturls.models import UrlShortener
+from shorturls.tests.mixins import UrlShortenerTestCaseMixin
 
 
-class UrlShortenerTestCase(TestCase):
-    def setUp(self):
-        super().setUp()
-        self.long_url = "https://google.com"
-
+class UrlShortenerTestCase(UrlShortenerTestCaseMixin, TestCase):
     def test_long_url_can_be_saved(self):
         """Ensure a long url can be saved (still without generate the
         short url version)
