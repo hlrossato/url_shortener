@@ -1,0 +1,15 @@
+# Python
+__pycache__
+*.pyc
+.pytest_cache
+
+# Project
+.env
+.vscode
+.coverage
+*.sqlite3
+.idea
+htmlcov
+
+# OS
+.DS_Store
