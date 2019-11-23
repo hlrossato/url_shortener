@@ -1,0 +1,12 @@
+django
+django-extensions
+python-decouple
+ipython
+pre-commit
+flake8
+black
+psycopg2-binary
+pytest
+pytest-django
+pytest-cov
+ipdb
