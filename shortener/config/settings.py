@@ -26,6 +26,7 @@ SECRET_KEY = config("SECRET_KEY")
 
 # SECURITY WARNING: don"t run with debug turned on in production!
 DEBUG = config("DEBUG", default=False, cast=bool)
+IS_PRODUCTION = DEBUG
 
 ALLOWED_HOSTS = config(
     "ALLOWED_HOSTS", cast=lambda v: [s.strip() for s in v.split(",")]
@@ -48,6 +49,7 @@ PROJECT_APPS = [
 
 THIRD_PARTY_APPS = [
     "django_extensions",
+    "crispy_forms",
 ]
 
 INSTALLED_APPS = DEFAULT_APPS + PROJECT_APPS + THIRD_PARTY_APPS
@@ -130,3 +132,4 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = "/static/"
+CRISPY_TEMPLATE_PACK = "bootstrap4"
