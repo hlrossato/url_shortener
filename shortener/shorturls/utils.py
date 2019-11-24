@@ -1,8 +1,6 @@
 import random
 import string
 
-from django.conf import settings
-
 
 def generate_url_short_code():
     alphabet = string.ascii_letters + string.digits
@@ -10,7 +8,4 @@ def generate_url_short_code():
 
 
 def generate_short_url(code):
-    if not settings.IS_PRODUCTION:
-        return f"localhost:8000/{code}"
-
-    return f"localhost:8000/{code}"
+    return f"http://localhost:8000/{code}"

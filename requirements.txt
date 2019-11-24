@@ -5,7 +5,7 @@ ipython
 pre-commit
 flake8
 black
-psycopg2-binary
+psycopg2
 pytest
 pytest-django
 pytest-cov

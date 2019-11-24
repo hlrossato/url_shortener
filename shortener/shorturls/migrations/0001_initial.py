@@ -22,11 +22,13 @@ class Migration(migrations.Migration):
                         verbose_name="ID",
                     ),
                 ),
-                ("long_url", models.URLField(verbose_name="Long URL")),
+                ("long_url", models.URLField(verbose_name="Long URL", db_index=True,)),
                 ("short_url", models.URLField(blank=True, verbose_name="Short URL")),
                 (
                     "url_short_code",
-                    models.SlugField(unique=True, verbose_name="URL Short Code"),
+                    models.SlugField(
+                        unique=True, db_index=True, verbose_name="URL Short Code"
+                    ),
                 ),
             ],
             options={
