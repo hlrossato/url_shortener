@@ -1,3 +1,9 @@
 [tool.black]
 include = '\.pyi?$'
-exclude = '\.git|\.vscode|\**/migrations/**'
+exclude = '''
+/(
+  | \.git
+  | \.vscode
+  | shortener/shorturls/migrations
+)/
+'''
