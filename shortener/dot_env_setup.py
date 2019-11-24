@@ -4,17 +4,17 @@ import random
 import string
 
 
-def write_dot_env_file(env_file):
-    settings = get_settings()
+def write_dot_env_file(env_file, debug):
+    settings = get_settings(debug)
     with open(env_file, "w") as f:
         for k, v in settings.items():
             f.write(f"{k.upper()}={v}\n")
 
 
-def get_settings():
+def get_settings(debug):
     return {
         "SECRET_KEY": generate_secret_key(),
-        "DEBUG": True,
+        "DEBUG": debug,
         "DB_ENGINE": "django.db.backends.postgresql",
         "DB_USER": "postgres",
         "DB_PASSWORD": generate_password(),
@@ -47,10 +47,10 @@ def set_debug():
     return False
 
 
-def dot_env_config():
+def dot_env_config(debug=True):
     env_file = os.path.join(os.path.dirname(os.path.abspath(__file__)), ".env")
 
     if not os.path.isfile(env_file):
-        write_dot_env_file(env_file)
+        write_dot_env_file(env_file, debug)
     else:
         pass
