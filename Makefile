@@ -19,6 +19,9 @@ docker-compose-up:
 	@echo "Starting Docker..."
 	@docker-compose up
 
+docker-start-pdb:
+	@docker-compose run --service-ports app
+
 docker-compose-build:
 	@echo "Build docker images..."
 	@docker-compose build
