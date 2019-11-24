@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+    {% if object %}
+        {% if search %}
+            <p>Long URL: <a href="{{ object.long_url }}">{{ object.long_url }}</a></p>
+        {% else %}
+            <p>Short URL: <a href="{{ object.short_url }}">{{ object.short_url }}</a></p>
+        {% endif %}
+    {% else %}
+        {% crispy form %}
+    {% endif %}
+{% endblock content %}
