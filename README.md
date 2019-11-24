@@ -3,7 +3,7 @@
 **Disclaimer:** _This project is intend for test purposes and is not ready for production._
 
 ## The task
-You are asked to create a URL shortening service. This system should:
+You are asked to create a URL shortening service.
 
 ## Functionality
 1. Given a long url, returns a short code for it.
